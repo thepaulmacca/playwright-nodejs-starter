@@ -8,7 +8,6 @@ test('Dialog test - Default handling is to dismiss', async ({ page }) => {
 
   const input = page.getByLabel('First name');
   await input.fill(name);
-
   await expect(input).toHaveValue(name);
 
   await page.getByRole('button', { name: 'Clear' }).click();

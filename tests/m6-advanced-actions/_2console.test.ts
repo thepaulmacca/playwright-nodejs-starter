@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test('Check console', async ({ page }) => {
 
+  // Must register the listeners before performing the action
   page.on('console', msg => {
     console.log(msg);
     expect.soft(msg.type()).not.toEqual('error');
